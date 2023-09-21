@@ -1,34 +1,70 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Alföldi Nyomda Ebédrendelés
 
-## Getting Started
+A program I wrote during my internship at Alföldi Printing House, with the use of [Next.js](https://nextjs.org/). The goal of this project was to make the lunch ordering process easier for both vendors and end users.
 
-First, run the development server:
+## Tools & stacks
+
+- [Next.js](https://nextjs.org/)
+- [Pocketbase](https://pocketbase.io/)
+- [Node.js](https://nodejs.org/en)
+- [Tailwindcss](https://tailwindcss.com/)
+- [Resend](https://resend.com/)
+- [Radix UI](https://www.radix-ui.com/)
+
+## Installation
+
+1. Clone the repository
+
+```bash
+git clone https://github.com/your-username/your-project.git
+
+```
+
+2. Install dependencies
+
+```bash
+npm i
+
+```
+
+3. Run the dev script
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+
+```
+
+4. In a separate terminal, run
+
+```bash
+./pocketbase serve
+
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+For the pocketbase Admin UI, open [http://127.0.0.1:8090/\_/](http://127.0.0.1:8090/_/) with your browser.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Usage
 
-## Learn More
+- Once you got the two terminals running, you'll see the opening page of the website
+  ![opening page](/public/img/md/md1.png)
 
-To learn more about Next.js, take a look at the following resources:
+- Navigate to "[Belépés](http://localhost:3000/account/login)", where you can login as either an user, a vendor, or an admin.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- username: user/vendor/admin
+- password: 12345678
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- to use resend and test the email sending service, you'll have to register an account at [Resend](https://resend.com/), register your domain, create an API Key, and use their names in the .env.local file. Read the docs [here](https://resend.com/docs/introduction)
+  ![.env.local](/public/img/md/md2.png)
 
-## Deploy on Vercel
+- You can login to the [Pocketbase Admin UI](http://127.0.0.1:8090/_/) like this:
+  email: anyrtebedrendelesapp@gmail.com
+  password: 12345678910
+  Read the Pocketbase docs [here](https://pocketbase.io/docs/)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+![pb ui](/public/img/md/md3.png)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## License
+
+- Creative Commons Attribution-NonCommercial-NoDerivatives (CC BY-NC-ND) license
