@@ -1,6 +1,7 @@
 import NewMenuEmail from "@/components/mailing/NewMenuEmail";
 import { Resend } from "resend";
-
+const resendName = process.env.RESEND_API_NAME;
+const resendDomain = process.env.RESEND_DOMAIN;
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 export default async function POST(req, res) {
@@ -8,7 +9,7 @@ export default async function POST(req, res) {
     const { email, prices, date, menuData } = req.body;
 
     const data = await resend.emails.send({
-      from: "Nyomda <szolgaltato@loosapp.com>",
+      from: `${resendName} <szolgaltato@${resendDomain}>`,
       to: email,
       subject: "Új heti menü lett feltéve!",
       react: NewMenuEmail({ prices: prices, date: date, menuData: menuData }),

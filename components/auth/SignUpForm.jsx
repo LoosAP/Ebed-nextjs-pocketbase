@@ -2,7 +2,7 @@
 
 import { accountmangagement } from "@/app/style";
 import { logo, slideshowphoto1, slideshowphoto2 } from "@/public/img";
-import photo1 from "@/public/img/photo1.png";
+
 import { pb } from "@/utils/pocketbase";
 import { Alert, SubmitButton } from "components/UI";
 import Image from "next/image";
